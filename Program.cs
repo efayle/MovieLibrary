@@ -49,6 +49,25 @@ namespace MovieLibraryAssignment
                         Console.WriteLine($"Movie title: {movieTitle[i]}");
                         Console.WriteLine($"Movie genre: {movieGenre[i]}");
                     }
+                // add movie to csv file
+                } else if (response == "2") {
+                    Console.WriteLine("Enter in the movie title");
+                    string title = Console.ReadLine();
+
+                    List<string> genres = new List<string>();
+                    string genre;
+                    do {
+                        Console.WriteLine("Enter in movie genre (done to quit)");
+                        genre = Console.ReadLine();
+                        if (genre != "done"){
+                            genres.Add(genre);
+                        }
+                    } while (genre != "done");
+
+                    StreamWriter sw = new StreamWriter(file, append: true);
+
+                    sw.WriteLine($"{movieID.Max()+1},{title},{String.Join("|", genres)}");
+                    sw.Close();
                 }
 
             } while (response == "1" || response == "2");
