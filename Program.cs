@@ -42,6 +42,15 @@ namespace MovieLibraryAssignment
                 Console.WriteLine("Enter anything else to quit.");
                 response = Console.ReadLine();
 
+                //display movies
+                if (response == "1") {
+                    for (int i = 0; i < movieID.Count; i++) {
+                        Console.WriteLine($"Movie ID: {movieID[i]}");
+                        Console.WriteLine($"Movie title: {movieTitle[i]}");
+                        Console.WriteLine($"Movie genre: {movieGenre[i]}");
+                    }
+                }
+
             } while (response == "1" || response == "2");
 
 
