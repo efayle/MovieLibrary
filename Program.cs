@@ -35,6 +35,16 @@ namespace MovieLibraryAssignment
             }
             sr.Close();
 
+            string response;
+            do {
+                Console.WriteLine("Enter 1 to read movies from file.");
+                Console.WriteLine("Enter 2 to add movies from file.");
+                Console.WriteLine("Enter anything else to quit.");
+                response = Console.ReadLine();
+
+            } while (response == "1" || response == "2");
+
+
             logger.Info("Program Ended");
         }
     }
